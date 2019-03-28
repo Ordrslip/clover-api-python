@@ -357,9 +357,9 @@ class InventoryService(object):
         return r.json()
 
     # Categories
-    def get_categories(self):
+    def get_categories(self, offset=0, limit=100):
         # Define Payload
-        payload = {}
+        payload = {'offset': offset, 'limit': limit}
         # Send Request
         r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/categories',
@@ -412,9 +412,9 @@ class InventoryService(object):
             params=payload)
         return r.json()
 
-    def get_categories_by_item(self, item_id):
+    def get_categories_by_item(self, item_id, offset=0, limit=100):
         # Define Payload
-        payload = {}
+        payload = {'offset': offset, 'limit': limit}
         # Send Request
         r = requests.delete(
             self.url + '/v3/merchants/' + self.merchant_id + '/items/' + item_id + '/categories',
@@ -446,9 +446,9 @@ class InventoryService(object):
         return r.json()
 
     # Modifier Groups
-    def get_modifier_groups(self):
+    def get_modifier_groups(self, offset=0, limit=100):
         # Define Payload
-        payload = {}
+        payload = {'offset': offset, 'limit': limit}
         # Send Request
         r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/modifier_groups',
@@ -526,9 +526,9 @@ class InventoryService(object):
         return r.json()
 
     # Modifiers
-    def get_modifiers(self):
+    def get_modifiers(self, offset=0, limit=100):
         # Define Payload
-        payload = {}
+        payload = {'offset': offset, 'limit': limit}
         # Send Request
         r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/modifiers',
@@ -549,9 +549,9 @@ class InventoryService(object):
             params=payload)
         return r.json()
 
-    def get_modifiers_by_modifier_group_id(self, modifier_group_id):
+    def get_modifiers_by_modifier_group_id(self, modifier_group_id, offset=0, limit=100):
         # Define Payload
-        payload = {}
+        payload = {'offset': offset, 'limit': limit}
         # Send Request
         r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/modifier_groups/' + modifier_group_id + '/modifiers',
