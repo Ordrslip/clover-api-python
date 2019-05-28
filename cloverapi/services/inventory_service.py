@@ -293,7 +293,7 @@ class InventoryService(object):
         # Define Payload
         payload = tag_item
         # Send Request
-        r = requests.get(
+        r = requests.post(
             self.url + '/v3/merchants/' + self.merchant_id + '/tag_items/',
             auth=self.auth,
             timeout=30,
@@ -416,7 +416,7 @@ class InventoryService(object):
         # Define Payload
         payload = {'offset': offset, 'limit': limit}
         # Send Request
-        r = requests.delete(
+        r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/items/' + item_id + '/categories',
             auth=self.auth,
             timeout=30,
