@@ -459,7 +459,7 @@ class InventoryService(object):
 
     def get_modifier_group_by_id(self, modifier_group_id):
         # Define Payload
-        payload = {'expand': 'items,modifiers'}
+        payload = {}
         # Send Request
         r = requests.get(
             self.url + '/v3/merchants/' + self.merchant_id + '/modifier_groups/' + modifier_group_id,
